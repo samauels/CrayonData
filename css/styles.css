@@ -1,0 +1,117 @@
+:root {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+div.container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-gap: 1rem;
+    grid-template-areas: "head  head  head"
+        "menu1 menu2 menu3";
+    padding: 2rem;
+    --bgprimary: #0063B2FF;
+    --fgtext: rgb(216, 225, 233);
+    --bgmenu1: #F5C7B8FF;
+    --bgmenu2: #990011FF;
+    --bgmenu3: #FEE715FF;
+
+    /* Text Sections */
+    --fgmenu1: #DF6589FF;
+    --fgmenu2: #FCF6F5FF;
+    --fgmenu3: #101820FF;
+
+}
+
+header.head {
+    grid-area: head;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+section {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid rgb(0, 0, 0);
+    background: var(--bgprimary);
+}
+
+section>span {
+    font-size: 1.2rem;
+    right: 0;
+    top: 0;
+    position: absolute;
+    padding: 0.2rem 3rem;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+section>p {
+    color: var(--fgtext);
+    padding-top: 1.5rem;
+}
+
+section.menu1>span {
+    background: var(--bgmenu1);
+    color: var(--fgmenu1);
+}
+
+section.menu2>span {
+    background: var(--bgmenu2);
+    color: var(--fgmenu2);
+}
+
+section.menu3>span {
+    background: var(--bgmenu3);
+    color: var(--fgmenu3);
+}
+
+section.menu1 {
+    grid-area: menu1;
+}
+
+section.menu2 {
+    grid-area: menu2;
+}
+
+section.menu3 {
+    grid-area: menu3;
+}
+
+
+/* Tablet Layout */
+
+@media (min-width: 767px) and (max-width:991px) {
+    div.container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-gap: 1rem;
+        grid-template-areas: "head head head head"
+            "menu1 menu1 menu2 menu2"
+            "menu3 menu3 menu3 menu3";
+
+    }
+}
+
+/* Mobile Layout */
+
+@media (max-width: 767px) {
+    div.container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-gap: 1rem;
+        grid-template-areas: "head"
+            "menu1"
+            "menu2"
+            "menu3";
+
+    }
+}
